@@ -1,0 +1,82 @@
+.more-menu {
+  height: 0.2rem;
+  border-radius: 50%;
+  width: 0.2rem;
+  background: white;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    top: -0.4rem;
+    height: 0.2rem;
+    width: 0.2rem;
+    background: white;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    top: 0.4rem;
+    height: 0.2rem;
+    width: 0.2rem;
+    background: white;
+  }
+}
+
+.back-press {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 0.5rem;
+    width: 0.1rem;
+    top: -1px;
+    transform: rotate(145deg);
+    background: white;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    height: 0.6rem;
+    width: 0.1rem;
+    bottom: -1px;
+    transform: rotate(215deg);
+    background: white;
+  }
+}
+
+.send-button {
+  position: relative;
+  background: $very-dark-desaturated-violet;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 0.45rem;
+    width: 0.12rem;
+    top: 0.66rem;
+    left: 50%;
+    transform: rotate(215deg);
+    background: white;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    height: 0.45rem;
+    width: 0.12rem;
+    bottom: 0.66rem;
+    left: 50%;
+    transform: rotate(145deg);
+    background: white;
+  }
+}
+
+.hollow-circle {
+  height: 1rem;
+  width: 1rem;
+  border: 1px solid $light-grayish-violet;
+  border-radius: 50%;
+}

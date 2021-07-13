@@ -1,0 +1,218 @@
+@import "config";
+@import "util";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  font-family: $font-family;
+  height: 100vh;
+  background-color: $light-grayish-violet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2;
+  &::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 45%;
+    height: 80%;
+    top: 0%;
+    left: -15%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    background: linear-gradient(45deg, $light-violet, $light-magenta);
+  }
+  &::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 45%;
+    height: 80%;
+    right: -15%;
+    bottom: 0%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    background: $chat-left-background;
+  }
+}
+
+.chat-container {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  & > * {
+    flex: 1;
+  }
+}
+
+.chat-details {
+  & > div {
+    width: 90%;
+    margin: 0 auto;
+    .chat-heading {
+      color: $very-dark-desaturated-violet;
+      font-size: $text-lg;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+    .chat-description {
+      color: $dark-grayish-violet;
+      font-size: $text-md;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+  }
+}
+
+.phone {
+  z-index: 10;
+  width: 15rem;
+  border: 0.5rem solid white;
+  border-radius: 1.5rem;
+  background-color: $light-grayish-violet;
+  margin: 0 auto;
+  box-shadow: 0 0 5rem lightgray;
+  &-header {
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(to right, $light-violet, $light-magenta);
+    border-radius: 0.5rem;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+
+    &::before {
+      content: "";
+      height: 1rem;
+      left: 15%;
+      top: -15%;
+      z-index: 2;
+      position: absolute;
+      width: 70%;
+      border-radius: 1rem;
+      background-color: white;
+    }
+
+    .phone-header-name-container {
+      flex: 1;
+      margin-left: 0.75rem;
+      color: $white;
+      .phone-header-name {
+        font-weight: 700;
+        font-size: $text-sm-md;
+      }
+      .phone-header-status {
+        font-weight: 400;
+        font-size: $text-sm;
+      }
+    }
+
+    img {
+      height: 1.5rem;
+      width: 1.5rem;
+      margin-left: 0.75rem;
+      border: 0.1rem solid white;
+      border-radius: 50%;
+    }
+  }
+  .phone-chat-container {
+    background: $light-grayish-violet;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    padding: 0.3rem;
+    .phone-msg-received-text {
+      display: flex;
+      margin-bottom: 0.3rem;
+      p {
+        padding: 0.3rem;
+        font-weight: 400;
+        font-size: $text-sm;
+        border-radius: 0.5rem;
+        border-bottom-left-radius: 0.2rem;
+        max-width: 60%;
+        color: $moderate-violet;
+        background-color: $chat-left-background;
+      }
+    }
+    .phone-msg-sent-text {
+      margin-bottom: 0.3rem;
+      display: flex;
+      justify-content: flex-end;
+      p {
+        color: black;
+        padding: 0.3rem;
+        font-weight: 400;
+        max-width: 60%;
+        font-size: $text-sm;
+        background-color: $white;
+        border-radius: 0.5rem;
+        border-bottom-right-radius: 0.2rem;
+      }
+    }
+    .phone-msg-sent-img {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 0.3rem;
+    }
+
+    .phone-msg-received-options {
+      display: flex;
+      margin-bottom: 0.3rem;
+      & > div {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        padding: 0.6rem 0.6rem 0.6rem 0.35rem;
+        background: linear-gradient(to left, $light-violet, $light-magenta);
+        border-radius: 0.5rem;
+        border-bottom-left-radius: 0.2rem;
+        .options-msg {
+          padding-left: 0.3rem;
+          flex: 1;
+          font-weight: 400;
+          font-size: $text-sm;
+        }
+
+        .options-value {
+          font-weight: 700;
+          font-size: $text-sm-md;
+        }
+      }
+    }
+
+    img {
+      height: 3rem;
+      margin-left: 0.5rem;
+      width: 3rem;
+      border-radius: 0.5rem;
+    }
+  }
+  .msg-input-container {
+    display: flex;
+    background: $white;
+    border-radius: 1.15rem;
+    font-size: $text-sm;
+    font-weight: 500;
+    padding: 0.25rem;
+    margin-bottom: 0.25rem;
+    color: hsl(206, 6%, 79%);
+    justify-content: space-between;
+    align-items: center;
+    p {
+      padding: 0rem 0.8rem;
+    }
+  }
+}
+
+@import "mobile";
